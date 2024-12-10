@@ -21,4 +21,4 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        sudo scp -o StrictHostKeyChecking=no -r dist ubuntu@${{ secrets.EC2_HOST }}:/app
+        scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r dist ubuntu@${{ secrets.EC2_HOST }}:/app
